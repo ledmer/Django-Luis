@@ -17,5 +17,5 @@ on the posts
 Visitors would be able to see statistics on the number, type and location of installations
 
 ## Team:
-Spencer Cooper
-Luis & Garces
+- Spencer Cooper
+- Luis Garces
