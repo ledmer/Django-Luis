@@ -18,4 +18,4 @@ Visitors would be able to see statistics on the number, type and location of ins
 
 ## Team:
 Spencer Cooper
-Luis Garces
+Luis & Garces
