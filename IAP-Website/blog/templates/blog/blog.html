@@ -1,0 +1,107 @@
+{%extends 'blog/base.html' %}
+{% load static %}
+
+
+{%block content_area %}
+    <div class="container container-main">
+            <main role="main">
+
+              
+                <article class="article-feature">
+                    <h2 class="article-title">The Rural Cooking Blog</h2>
+                    <img src="{% static 'asset/images/test2.jpg' %}" alt="" class="article-image">
+                    <p class="article-info">July 23, 2023 | comments</p>
+                    <p class="article-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nisi! Reprehenderit tenetur sunt voluptas accusamus est cupiditate totam cumque? Cumque amet aliquid repellendus quidem repellat possimus quibusdam repudiandae nisi omnis?</lorem:400>
+                    </p>
+                    <a href="" class="article-read-more">Read More</a>
+                </article>
+        
+
+                <article class="article-recent">
+                    <div class="article-recent-main">
+                        <h2 class="article-title">Finding Solution</h2>
+                        <p class="article-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo officia porro dicta, ex deserunt distinctio enim earum voluptates nostrum laborum error eaque quae alias asperiores. Inventore quo excepturi ullam officiis!
+                        </p>
+                        <a href="" class="article-read-more">Continue Reading</a>
+                    </div>
+
+                    <div class="article-recent-secondary">
+                        <img src="{% static 'asset/images/woman_cooking.png' %}" alt="" class="article-image">
+                        <p class="article-info">September 9, | Comment</p>
+                    </div>
+
+                </article>
+
+
+                <article class="article-recent">
+                    <div class="article-recent-main">
+                        <h2 class="article-title">Finding Solution</h2>
+                        <p class="article-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo officia porro dicta, ex deserunt distinctio enim earum voluptates nostrum laborum error eaque quae alias asperiores. Inventore quo excepturi ullam officiis!
+                        </p>
+                        <a href="" class="article-read-more">Continue Reading</a>
+                    </div>
+
+                    <div class="article-recent-secondary">
+                        <img src="{% static 'asset/images/woman_cooking.png' %}" alt="" class="article-image">
+                        <p class="article-info">September 9, | Comment</p>
+                    </div>
+
+                </article>
+
+
+                <article class="article-recent">
+                    <div class="article-recent-main">
+                        <h2 class="article-title">Finding Solution</h2>
+                        <p class="article-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo officia porro dicta, ex deserunt distinctio enim earum voluptates nostrum laborum error eaque quae alias asperiores. Inventore quo excepturi ullam officiis!
+                        </p>
+                        <a href="" class="article-read-more">Continue Reading</a>
+                    </div>
+
+                    <div class="article-recent-secondary">
+                        <img src="{% static 'asset/images/woman_cooking.png' %}" alt="" class="article-image">
+                        <p class="article-info">September 9, | Comment</p>
+                    </div>
+
+                </article>
+
+            </main><!--end of main here-->
+
+            <aside class="sidebar">
+
+                <div class="sidebar-widget">
+                    <h2 class="widget-title">Sidebar first heading</h2>
+                    <img src="{% static 'asset/images/woman_cooking.png' %}" alt="" class="widget-image">
+                    <p class="widget-body"></p>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h2 class="widget-title">Sidebar second heading</h2>
+                    <div clas="widget-recent-post">
+                        <h3 class="widget-recent-post-title"> Another heading in recent</h3>
+                        <img src="" alt="" class="widget-image">
+                    </div>
+
+                    <div clas="widget-recent-post">
+                        <h3 class="widget-recent-post-title">Heading Again</h3>
+                        <img src="{% static 'asset/images/woman_cooking.png' %}" alt="" class="widget-image">
+                    </div>
+
+                    <div clas="widget-recent-post">
+                        <h3 class="widget-recent-post-title">Heading Again2</h3>
+                        <img src="{% static 'asset/images/woman_cooking.png' %}" alt="" class="widget-image">
+                    </div>
+
+
+
+                    <div clas="widget-recent-post">
+                        <h3 class="widget-recent-post-title">Heading Again2</h3>
+                        <img src="{% static 'asset/images/woman_cooking.png' %}" alt="" class="widget-image">
+                    </div>
+                 
+                </div>
+            </aside>
+        </div>
+
+        <h1>Learning To code is so sweet </h1>
+
+        {% endblock %}

@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Inexpensive IAP Reduction System</title>
+    <link href="https://fonts.geogleapis.com/family=Lora|Ubuntu:300,400,700&displayswap" rel="stylesheet">
+    <meta name="author" content="Spencer Cooper">
+    <link rel="stylesheet" href="{% static 'asset/css/style.css' %}" >
+</head>
+<body>
+    <header>
+        <div class="container container-nav"> 
+            <nav>
+                <div class="site-title ">
+                    <h1>The IAP Reduction System</h1>
+                    <p>This blog is intended to help people understand the effort of cooking on wood</p>
+                </div> 
+                <ul class="nav-list">
+                    <li class="nav-list-item"><a href="{%url 'index' %}" class="navbar-line">Home</a></li>
+                    <li class="nav-list-item"><a href="{%url 'blog' %}" class="navbar-line">Blog</a></li>
+                    <li class="nav-list-item"><a href="#" class="navbar-line">About</a></li>
+                    <li class="nav-list-item"><a href="#" class="navbar-line">SigIn</a><span> | <a href="" class="navbar-line">SignUp</a></span></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>  
+                </div>
+            </nav>
+        </div>
+    </header>

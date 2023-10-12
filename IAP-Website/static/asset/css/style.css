@@ -1,0 +1,376 @@
+/* *{
+    margin : 0;
+    padding : 0;
+
+}  */
+
+
+/* Using compound selector on navbar */
+
+body{
+    margin : 0;
+    font-family : 'Ubuntu', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+img {
+    max-width : 100%;
+    display : block;
+}
+
+/* ==========
+ Page Layout
+=============== */
+.container{
+    width : 90%;
+    max-width : 1200px;
+    margin : 0 auto;
+    justify-content: space-between;
+}
+.container-nav, .container-main{
+    display : flex;
+    flex-direction : column;
+    justify-content: space-between;
+}
+
+header{
+    padding : 1em 0;
+    /* background : yellow; */
+    background: #f8f8f8f8;
+    text-align: left;
+    margin-bottom : 2em;
+}
+
+/* Nav bar section */
+
+nav{
+    min-height : 70px;
+    display : flex;
+    justify-content: space-between;
+    align-items: right;
+    padding : 0 14px;
+}
+
+nav ul{
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    gap : 40px;
+
+    /* list-style: none;
+    gap : 40px;
+    display : flex;
+    justify-content: center; */
+
+
+}
+nav li{
+    list-style: none;
+    /* margin-left: 2em; */
+}
+
+nav a{
+    text-decoration : none;
+    color : #707070;
+    font-weight : 700;
+    padding: .25em 0;
+}
+
+.hamburger{
+    display : none;
+    cursor: pointer;
+   
+}
+
+.bar{
+    display : block;
+    width : 20px;
+    height : 3px;
+    margin : 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background : black;
+   
+
+}
+
+nav a:hover,
+nav a:focus{
+    color : #1792d2;
+
+}
+
+.navbar-link{
+    transition : 0.7s ease;
+
+}
+.present_page{
+    border-bottom: 1px solid #707070;
+}
+.present_page:hover{
+    color : #797979;
+}
+
+
+
+h1,
+h2,
+h3{
+    font-family : 'Lora', serif;
+    font-weight : 100;
+    color : #1792d2;
+    margin-top : 0;
+}
+
+h1{
+    font-size : 2rem;
+    margin : 0;
+}
+
+a:hover,
+a:focus{
+    color : #1792d2;
+}
+
+
+.banner-section{
+    margin-top : -20px;
+    width : 90vw;
+    height : 70vh;
+    margin : 0 auto;
+    justify-content: space-between;
+    background-color : #efefef;
+}
+
+.banner-section img{
+    max-width: 100%;
+    width : 100%;
+    object-position : top left;
+    margin-bottom : -15rem;
+    object-fit:cover;
+    height : 70vh;
+}
+.banner-section .banner-heading h1{
+    margin-top : -100px;
+    text-align: left;
+    color : #daa520;
+    /* color : #1792d2; */
+    margin-top : 60px;
+    font-size: 3rem;
+    font-weight: 700;
+    
+}
+
+
+
+
+/* =================
+Navbar mobile media query ======= */
+@media screen and (max-width: 668px){
+
+    .hamburger{
+        display : block;
+    }
+  
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(-50deg);
+    }
+
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-50deg);
+    }
+    .nav-list{
+    position : fixed;
+    left : -100%;
+    top : 70px;
+    gap : 3px;
+    flex-direction : column;
+    background-color : #262626;
+    width : 100%;
+    text-align : center;
+    transition : 0.3s;
+    }
+
+    .nav-list-item{
+        margin : 16px 0;
+    }
+
+    .nav-list-item.active{
+        left : 0;
+    }
+}
+/* end of Nav media query section */
+
+/* The rural cooking site tile */
+.site-title{
+    font-weight : 700;
+    font-size : .75rem;
+    margin : 0; 
+}
+
+.form-bg{
+    background :#efefef;
+    padding : 2rem;
+    float : right;
+    max-width: 668px;
+    border-radius: 1em;
+    
+}
+.input-field{
+    background: transparent;
+    padding : .5em;
+    border-radius: .8em;
+    border : 3px solid #fff;
+    width : 80%;
+    max-width: 0 auto;
+}
+
+footer{
+    background: #143774;
+    color : #fff;
+    text-align : center;
+    padding : 1em;
+}
+@media (min-width: 668px){
+    .container-main{
+        flex-direction :row;
+    }
+
+    main{
+        width : 70%;
+    }
+    aside{
+        width : 25%;
+        min-width : 250px;
+        margin-left: 1em;
+    }
+}
+
+
+.article-read-more,
+.article-read-more{
+    font-size: 0.875rem;
+}
+.article-read-more{
+    color : #1792d2;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.article-read-more:hover, .article-read-more:focus{
+    color : #143774;
+    text-decoration: underline;
+}
+
+.article-info{
+    line-height: 0;
+}
+
+.article-title{
+    font-size: 1.5rem;
+}
+.widget-title,
+.widget-recent-post-title{
+    font-size: 1rem;
+}
+.widget-title{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;;
+}
+
+
+@media screen and (max-width: 675px){
+    .site-title{
+        font-size : .65rem;
+      
+    }
+
+    nav ul{
+        flex-direction : column;
+
+    }
+    nav li{
+        margin: .5em 0;
+    }
+
+    
+    .hamburger{
+        display : block;
+
+    }
+}
+
+
+/* article section */
+.article-feature{
+    border-bottom : #707070 1px solid;
+    padding-bottom : 1rem;
+    margin-bottom : 2em;
+}
+
+.article-recent{
+    display : flex;
+    flex-direction: column;
+}
+.article-recent-main{
+    order : 2;
+}
+.article-recent-secondary{
+    order : 1;
+}
+
+@media(min-width: 675px){
+    .article-recent{
+        flex-direction : row;
+        justify-content: space-between;
+    }
+    .article-recent-main{
+        width : 68%;
+    }
+
+    .article-rent-secondary{
+        width : 30%;
+    }
+
+    .article-image{
+        width : 90%;
+        min-height : 200px;
+        object-fit : cover;
+    }
+
+    .article-feature{
+        display : flex;
+        flex-direction: column;
+    }
+
+    .article-image{
+        order : -2;
+    }
+
+    .article-info{
+        order : -1
+    }
+}
+/* widget */
+
+.sidebar-widget{
+    border : 20px solid #efefef;
+    margin-bottom : 2em;
+    padding : 1em;
+}
+
+.widget-recent-post{
+    display : flex;
+    flex-direction: column;
+    border-bottom: 1px solid #70707070;
+}
+
+.widget-image{
+    order : -1;
+}
