@@ -21,7 +21,13 @@
                     <li class="nav-list-item"><a href="{%url 'index' %}" class="navbar-line">Home</a></li>
                     <li class="nav-list-item"><a href="{%url 'blog' %}" class="navbar-line">Blog</a></li>
                     <li class="nav-list-item"><a href="{%url 'about' %}" class="navbar-line">About</a></li>
-                    <li class="nav-list-item"><a href="#" class="navbar-line">SigIn</a><span> | <a href="" class="navbar-line">SignUp</a></span></li>
+                    
+                    {% if user.is_authenticated %}
+                        <li class="nav-list-item"><span> Welcome, {{request.user}} </span></li>
+                        <li class="nav-list-item"><a href="{% url 'logout' %}">Logout</a></span>
+                    {% else %}
+                        <li class="nav-list-item"><a href="{% url 'signup' %}" class="navbar-line">SignUp</a><span> | <a href="{% url 'login' %}?next={{request.path}}" class="navbar-line">Login</a></span></li> 
+                    {% endif %}
                 </ul>
                 <div class="hamburger">
                     <span class="bar"></span>
