@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.conf.urls.static import static
+from blog.admin import blog_site
 
 """
 URL configuration for ruralcooking_core project.
@@ -22,6 +23,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('blogadmin/', blog_site.urls),
     path('', include('blog.urls')),
 ]
 
