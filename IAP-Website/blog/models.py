@@ -5,8 +5,19 @@ import datetime
 
 class Post(models.Model):
     title = models.CharField(max_length=20)
-    current_time = models.DateTimeField(default=timezone.now, blank=True)
-    body = models.CharField(max_length=1000000)
+    current_time = models.DateTimeField(auto_now_add=True)
+    slug = models.SlugField()
+    body = models.TextField()
+
+    class Meta:
+        ordering = ('-current_time',)
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)
+    name = models.CharField(max_length=220)
+    current_time = models.DateTimeField(auto_now_add=True)
+    email = models.EmailField()
+    body = models.TextField()
 
 
 # Create your models here.

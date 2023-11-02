@@ -1,0 +1,61 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+
+{% block content_area %}
+    <div class="container container-main">
+        <div class="">
+            <div class="banner-section">
+                <img src="">
+            </div>
+           
+            <h2 class="article-title">{{post.title|upper}} </h2>
+            <p class="article-info"><strong>{{post.current_time|timesince}} ago</strong></p>
+            <p class="article-body">{{post.body|truncatewords:20}}</a></p>
+
+            <hr>
+            <h2>Comment</h2>
+            <form method="POST" class="">
+                {%csrf_token %}
+    
+                {{form.as_p}}
+                <div class="fields">
+                    <div class="control">
+                    <button class="button is-success">Comments</button>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+    
+            </form>
+         
+        </div>
+        
+    </div>
+
+  
+  
+       
+        {% for Comment in post.comments.all %}
+    
+            <article class="container container-main">
+                <div class="media-content">
+                    <strong><p>{{Comment.name }}</p></strong><small>{{ Comment.current_time |timesince }} ago</small><br>
+                    <p>{{Comment.body}}</p>
+                </div>
+            
+            <br>
+            <br>
+            </article>
+
+            <br>
+            <br> 
+    
+        {% endfor %}
+
+
+{%endblock%}
+
+
+
+
