@@ -5,9 +5,10 @@
 {% block content_area %}
     <div class="container container-main">
         <div class="">
-            <div class="banner-section">
-                <img src="">
-            </div>
+            <!-- Image tag coming soon -->
+            <!-- <div class="banner-section">
+                <img src="{url ''}">
+            </div> -->
            
             <h2 class="article-title">{{post.title|upper}} </h2>
             <p class="article-info"><strong>{{post.current_time|timesince}} ago</strong></p>
@@ -39,7 +40,7 @@
         {% for Comment in post.comments.all %}
     
             <article class="container container-main">
-                <div class="media-content">
+                <div class="comment-section">
                     <strong><p>{{Comment.name }}</p></strong><small>{{ Comment.current_time |timesince }} ago</small><br>
                     <p>{{Comment.body}}</p>
                 </div>

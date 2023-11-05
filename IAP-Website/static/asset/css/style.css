@@ -10,25 +10,24 @@ cent{
 body{
     margin : 0;
     font-family : 'Ubuntu', sans-serif;
-    font-size: 1.25rem;
+    font-size: 1.95rem;
     font-weight: 300;
+    padding : 2.3rem;
 }
 
 img {
     max-width : 100%;
     display : block;
+   
 }
+
 .media{
     width : 30%;
     background-color :#f8f8f8;
     color : black;
 }
-.media-content{
-    background-color :#797979;
-    width : 30%;
-    padding : 1em;
 
-}
+
 
 
 /* ==========
@@ -175,18 +174,6 @@ a:focus{
     
 }
 
-.paginator{
-    text-align: center;
-    background-color : gainsboro;
-    width : 20%;
-    padding : .3em;
-    margin : 0 auto;
-    border-radius: 3em;
-
-}
-
-
-
 
 /* =================
 Navbar mobile media query ======= */
@@ -247,24 +234,6 @@ Navbar mobile media query ======= */
         left : 0;
     }
 
-
-
-
-
-
-    /* .nav-list.active{
-        list-style: none;
-        display:list-item;
-        position : fixed;
-        right: 10%;
-        top : 70px;
-        gap : 3px;
-        flex-direction : column;
-        background-color : #262626;
-        width : 30%;
-        transition : 0.3s;
-    } */
-
     .nav-list-item{
         /* margin : 16px 0; */
         margin-right : 3em;
@@ -276,7 +245,7 @@ Navbar mobile media query ======= */
 }
 /* end of Nav media query section */
 
-/* The rural cooking site tile */
+/* The rural cooking site title */
 .site-title{
     font-weight : 700;
     font-size : .75rem;
@@ -339,6 +308,7 @@ footer{
 
 .article-info{
     line-height: 0;
+    
 }
 
 .article-title{
@@ -405,8 +375,10 @@ footer{
         flex-direction : row;
         justify-content: space-between;
     }
+    
     .article-recent-main{
         width : 68%;
+        padding : 3rem;
     }
 
     .article-rent-secondary{

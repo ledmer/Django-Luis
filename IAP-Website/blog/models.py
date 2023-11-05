@@ -7,6 +7,7 @@ class Post(models.Model):
     title = models.CharField(max_length=20)
     current_time = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField()
+    image = models.ImageField(upload_to='uploaded/galleries', blank=True, null=True)
     body = models.TextField()
 
     class Meta:
@@ -18,6 +19,9 @@ class Comment(models.Model):
     current_time = models.DateTimeField(auto_now_add=True)
     email = models.EmailField()
     body = models.TextField()
+
+    class Meta:
+        ordering = ('-current_time',)
 
 
 # Create your models here.
