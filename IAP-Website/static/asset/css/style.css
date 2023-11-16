@@ -78,7 +78,6 @@ nav ul{
 }
 nav li{
     list-style: none;
-    /* margin-left: 2em; */
 }
 
 nav a{
@@ -90,7 +89,7 @@ nav a{
 nav span{
     color : #1792d2;
     font-weight : 700;
-    padding: .25em 0;
+    padding: .1em 0;
 }
 .hamburger{
     display : none;
@@ -206,37 +205,40 @@ Navbar mobile media query ======= */
     }
 
     .hamburger.active .bar:nth-child(1){
-        transform : translateY(8px) rotate(45deg);
+        transform : translateY(11px) rotate(45deg);
     }
 
 
     .hamburger.active .bar:nth-child(3){
-        transform : translateY(-8px) rotate(-45deg);
+        transform : translateY(-11px) rotate(-45deg);
     }
 
     /* start of editing */
 
     /* Place here */
     .nav-list{
-        position : fixed;
-        left : -100%;
-        top : 70px;
-        gap : 0;
-        flex-direction: column;
-        background-color : #f8f8f8;
-        width : 100%;
-        text-align: left;
-        transition : 0.3s;
+        display: none;
 
     }
 
     .nav-list.active{
-        left : 0;
+        display:flex;
+
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        border-left-width: thin;
+        background-color: #f8f8f8;
+        width: 100%;
+        transition: 0.3s;
+        z-index: 1;
+        position: absolute;
+        align-items: flex-end;
     }
 
     .nav-list-item{
         /* margin : 16px 0; */
-        margin-right : 3em;
+        /* margin-right : 3em;*/
     }
 
     .nav-list-item.active{
