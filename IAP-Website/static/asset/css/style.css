@@ -194,7 +194,7 @@ Navbar mobile media query ======= */
     .nav-list.active{
         list-style: none;
         display:list-item;
-        position : fixed;
+        position : absolute;
         right: 10%;
         top : 70px;
         gap : 3px;
