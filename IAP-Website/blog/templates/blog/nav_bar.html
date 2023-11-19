@@ -24,7 +24,8 @@
                     
                     {% if user.is_authenticated %}
                         <li class="nav-list-item"><span> Welcome, {{request.user}} </span></li>
-                        <li class="nav-list-item"><a href="{% url 'logout' %}">Logout</a></span>
+                        <li class="nav-list-item"><a href="{% url 'logout' %}?next={{ request.path }}">Logout</a>
+                        </span>
                     {% else %}
                         <li class="nav-list-item"><a href="{% url 'signup' %}" class="navbar-line">SignUp</a><span> | <a href="{% url 'login' %}?next={{request.path}}" class="navbar-line">Login</a></span></li> 
                     {% endif %}

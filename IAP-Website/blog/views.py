@@ -21,22 +21,36 @@ def about(request):
 #     return render(request, "blog/blog.html")
 
 #Accounts
+
+
 def loginPage(request):  
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
+
         if user is not None:
             login(request, user)
-            return redirect('next')
+            next_url = request.POST.get('next', None)
+            if next_url:
+                return redirect(next_url)
+            else:
+            # If 'next' is not present, use the stored URL or a default URL
+                return redirect(request.session.get('last_page_visited', '/'))
         else:
             messages.info(request, 'Username OR Password is incorrect')
+    else:
+        request.session['last_page_visited'] = request.META.get('HTTP_REFERER', '/')
+ 
     context = {}
     return render(request, "accounts/login.html", context)
 
 def logoutUser(request):
+    request.session['last_page_visited'] = request.META.get('HTTP_REFERER', '/')
+    next_url = request.GET.get('next', None)
+
     logout(request)
-    return redirect('/')
+    return redirect(next_url or request.session.get('last_page_visited', '/'))
 def signupPage(request):
 
     form = CreateUserForm()
@@ -46,7 +60,7 @@ def signupPage(request):
             form.save()
             user = form.cleaned_data.get("username")
             messages.success(request,'Account was created for ' + user)
-            return redirect('login')
+            return redirect('/')
             
     context = {'form':form}
     return render(request, "accounts/signup.html",context)
