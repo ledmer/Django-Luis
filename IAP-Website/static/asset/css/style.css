@@ -87,18 +87,6 @@ nav span{
    
 }
 
-.bar{
-    display : block;
-    width : 20px;
-    height : 3px;
-    margin : 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background : black;
-   
-
-}
-
 nav a:hover,
 nav a:focus{
     color : #1792d2;
@@ -172,21 +160,30 @@ a:focus{
 Navbar mobile media query ======= */
 @media screen and (max-width: 668px){
 
-    .hamburger{
-        display : block;
+    .hamburger {
+        display: inline-block;
+        cursor: pointer;
     }
   
+    .bar {
+        display: block;
+        width: 30px;
+        height: 0px;
+        background-color: #3A3B3C;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
 
     .hamburger.active .bar:nth-child(2){
         opacity: 0;
     }
 
     .hamburger.active .bar:nth-child(1){
-        transform: translateY(8px) rotate(-50deg);
+        transform: translateY(16px) rotate(-50deg);
     }
 
     .hamburger.active .bar:nth-child(3){
-        transform: translateY(-8px) rotate(-50deg);
+        transform: translateY(-16px) rotate(50deg);
     }
     .nav-list{
         display: none;
