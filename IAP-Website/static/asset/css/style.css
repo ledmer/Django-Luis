@@ -36,8 +36,7 @@ img {
 
 header{
     padding : 1em 0;
-    /* background : yellow; */
-    background: #f8f8f8f8;
+    background: #efefef;
     text-align: left;
     margin-bottom : 2em;
 }
@@ -126,6 +125,7 @@ a:focus{
 }
 
 .banner-section{
+    border: 15px solid #efefef;
     margin-top : -20px;
     width : 80vw;
     height : 70vh;
@@ -137,20 +137,16 @@ a:focus{
 .banner-section img{
     max-width: 100%;
     width : 100%;
-    object-position : top left;
     margin-bottom : -15rem;
     object-fit:cover;
     height : 70vh;
 }
-.banner-section .banner-heading h1{
-    margin-top : -100px;
+h1.banner-heading {
     text-align: left;
-    color : #daa520;
-    /* color : #1792d2; */
-    margin-top : 60px;
-    font-size: 3rem;
+    margin-top : 0px;
+    margin-bottom : 10px;
+    font-size: 2rem;
     font-weight: 700;
-    
 }
 
 
