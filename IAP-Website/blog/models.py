@@ -22,9 +22,6 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ('-current_time',)
-    
-    def __str__(self):
-        return self.name
 
 
 # Create your models here.

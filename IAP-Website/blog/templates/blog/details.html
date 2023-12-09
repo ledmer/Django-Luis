@@ -6,15 +6,14 @@
     <div class="container">
         <div class="">
             <div class="banner-section">
-                <img src="{% static 'asset/images/test1.jpg' %}">
+                <p class="banner-heading"><span>Blog</span><br>{{post.title}}</p> 
             </div>
-           
-            <h2 class="article-title">{{post.title|upper}} </h2>
+            <br>
             <p class="article-info"><strong>{{post.current_time|timesince}} ago</strong></p>
             <p class="article-body">{{post.body|truncatewords:20}}</a></p>
-
+         
             <hr>
-            <h2>Comment</h2>
+            <h2 class="comment">Comment</h2>
             <form method="POST" class="">
                 {%csrf_token %}
     
@@ -39,7 +38,7 @@
         {% for Comment in post.comments.all %}
     
             <article class="container container-main">
-                <div class="media-content">
+                <div class="comment-section">
                     <strong><p>{{Comment.name }}</p></strong><small>{{ Comment.current_time |timesince }} ago</small><br>
                     <p>{{Comment.body}}</p>
                 </div>
