@@ -3,19 +3,18 @@
 
 
 {%block content_area %}
-    <div class="container container-main">
-        <div class="">
-            <div class="banner-section">
-                <img src="{% static 'asset/images/test1.jpg' %}">
-                <h1 class="banner-heading">The Rural Cooking Blog</h1>
-            </div>
+    <div class="container">
+        <div class="banner-section">
+            <img src="{% static 'asset/images/test1.jpg' %}">
+                <h1 class="banner-heading">The Rural Cooking Blog</h1> 
+        </div>
+        <div class="block_article">
             {% for posts in post %}
-            <h2 class="article-title">{{posts.title|upper}} </h2>
-            <p class="article-info">{{posts.current_time|timesince}} ago</p>
-            <p class="article-body">{{posts.body|truncatewords:20}} <a href="{% url 'post_details' posts.slug %}" class="article-read-more">Read More</a></p>
-            
+                <h2 class="article-title">{{posts.title|upper}} </h2>
+                <p class="article-info">{{posts.current_time|timesince}} ago</p>
+                <p class="article-body">{{posts.body|truncatewords:20}} <a href="{% url 'post_details' posts.slug %}" class="article-read-more">Read More</a></p>
+                
             {%endfor%}
-           
         </div>
     </div>
 

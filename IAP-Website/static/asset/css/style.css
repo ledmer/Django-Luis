@@ -4,9 +4,7 @@
 
 }  */
 /* Using compound selector on navbar */
-cent{
-    text-align : center;
-}
+
 body{
     margin : 0;
     font-family : 'Ubuntu', sans-serif;
@@ -17,18 +15,36 @@ body{
 img {
     max-width : 100%;
     display : block;
+
 }
+
+.block_article{
+    align-items: left;
+    justify-content:left;
+    max-width: 95%;
+}
+.article-title, .article-body,.article-info{
+    padding : .3em;
+    margin : 0;
+}
+
+
+/* img {
+    max-width : 100%;
+    display : block;
+} */
 .media{
     width : 30%;
     background-color :#f8f8f8;
     color : black;
 }
 .media-content{
-    background-color :#797979;
-    width : 30%;
+    /* background-color :#797979; */
+    width : 100%;
     padding : 1em;
+    border-radius: 15px;
 
-}
+} 
 
 
 /* ==========
@@ -103,12 +119,12 @@ nav span{
     display : block;
     width : 25px;
     height : 3px;
-    margin : 5px;
+    margin : 5px auto;
     -webkit-transition : all 0.3s ease-in-out;
     transition : all 0.3s ease-in-out;
     background-color: black;
+  
 }
-
 nav a:hover,
 nav a:focus{
     color : #1792d2;
@@ -154,36 +170,47 @@ a:focus{
     margin : 0 auto;
     justify-content: space-between;
     background-color : #efefef;
+    padding : 30px;
 }
 
+
+.banner-section{
+
+    align-items: center;
+        width : 100%;
+        min-height : 70vh;
+        background-image: linear-gradient(rgba(0,8,51,0.9),rgba(0,8,51,0.9));
+        background-position : center;
+        background-size : cover;
+        /* padding : 5%; */
+        align-items: center;
+        justify-content: center; 
+}
 .banner-section img{
     max-width: 100%;
     width : 100%;
-    object-position : top left;
-    margin-bottom : -15rem;
+    /* object-position : top left; */
+    margin-bottom : -10em;
     object-fit:cover;
-    height : 70vh;
-}
-.banner-section .banner-heading h1{
-    margin-top : -100px;
-    text-align: left;
-    color : #daa520;
-    /* color : #1792d2; */
-    margin-top : 60px;
-    font-size: 3rem;
-    font-weight: 700;
-    
+    height : 65vh;
 }
 
-.paginator{
+.site-title-bg{
+    background-color : #fff;
+    width : 100%;
+}
+
+.banner-heading{
     text-align: center;
-    background-color : gainsboro;
-    width : 20%;
-    padding : .3em;
-    margin : 0 auto;
-    border-radius: 3em;
-
+    font-size : 3rem;
+    text-shadow: 0 1px 1px;
+    color : #efefef;
+    margin-bottom : .9em;
+    letter-spacing: .2em;
+    font-weight: 600;
+    text-shadow: .2em .9em 5em;
 }
+
 
 
 

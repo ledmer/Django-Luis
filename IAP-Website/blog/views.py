@@ -2,11 +2,10 @@ from django.shortcuts import get_object_or_404, render, redirect
 from .models import Post
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm
+from .forms import CreateUserForm, CommentForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 #from django.core.paginator import Paginator
-from .forms import CommentForm
 # Create your views here.
 
 def index(request):
