@@ -11,11 +11,14 @@ body{
     /* font-size: 1.95rem; */
     font-weight: 300;
     padding : 2.3rem;
-    margin : 0;
+
 }
 
 img {
     max-width : 100%;
+    width : 100%;
+    margin :0;
+    padding :0;
     display : block;
    
 }
@@ -63,11 +66,13 @@ nav{
     /* padding : 0 14px; */
     margin : 0;
 }
+
 .banner-heading{
     text-align: center;
     font-size : 3rem;
     text-shadow: 0 1px 1px;
-    color :	#FFFFFF;
+    color : black;
+    /* color :	#FFFFFF; */
     margin-bottom : .9em;
     letter-spacing: .2em;
     font-weight: 600;
@@ -157,13 +162,17 @@ a:focus{
 }
 
 .banner-section{
-    margin-top : -20px;
+    /* margin-top : -20px; */
     width : 90vw;
-    height : 70vh;
-    margin : 0 auto;
+    height : 55vh;
+    margin : 0;
     justify-content: space-between;
     background-color : #efefef;
-    padding : 30px;
+    padding : 0;
+}
+.banner-heading{
+    font-size : 3rem;
+    color : #fff;
 }
 
 
@@ -186,12 +195,54 @@ a:focus{
     object-fit:cover;
     height : 65vh;
 }
+
+.pagination-list{
+    min-height : 30px;
+    margin : 0;
+    padding : 0 14px; 
+
+}
+.nav-list-item{
+    font-size : 1.5rem;
+    display: flex;
+    margin : 0;
+    padding : .9, .9em;
+
+}
+.pagination-line{
+    display: inline;
+    padding : .3rem;
+    /* margin : 0 auto; */
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.pagination-item{
+    text-align: left;
+   
+}
+.page-link{
+    font-size : 1.5rem;
+    margin : .5 .5em;
+    color : #1792d2;
+}
+
+.page-link:hover{
+    background-color : #1792d2;
+    color : #f8f8f8;
+    padding : .3em;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    border-radius: .3em;
+}
 .article-title, .article-info, .article-body, .comment{
     font-size : 1.5rem;
     margin : 0;
     padding : .3em 0;
 
 }
+
 
 
 
@@ -263,6 +314,31 @@ Navbar mobile media query ======= */
     .nav-list-item.active{
         text-align: left;
     }
+
+    .banner-section{
+        /* margin-top : rem; */
+        align-items: center;
+        width : 100%;
+        min-height : 40vh; 
+    }
+    .banner-section img{
+        max-width: 100%;
+        width : 100%;
+        height : 65vh;
+    }
+    .banner-heading{
+        font-size : 1.5rem;
+        color : #fff;
+        padding : .9em;
+    }
+
+    img {
+        width : 50%;
+        margin :0;
+        padding :0;
+        display : block;
+       
+    }
 }
 /* end of Nav media query section */
 
@@ -312,8 +388,6 @@ footer{
     }
 }
 
-
-.article-read-more,
 .article-read-more{
     font-size: 0.875rem;
 }
@@ -333,7 +407,7 @@ footer{
     
 }
 
-.article-title{
+.article-title, .article-read-more{
     font-size: 1.5rem;
 }
 .widget-title,

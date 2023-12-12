@@ -5,13 +5,18 @@ from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserForm, CommentForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-#from django.core.paginator import Paginator
+from django.core.paginator import Paginator
 # Create your views here.
 
 def index(request):
     post = Post.objects.all()
+    paginator = Paginator(post,1)
+
+    page_number = request.GET.get("page")
+    post_obj = paginator.get_page(page_number)
+
     
-    return render(request, "blog/index.html",{"post": post})
+    return render(request, "blog/index.html",{"post": post_obj})
 
 #Comments
 def details(request, slug):
@@ -33,10 +38,19 @@ def details(request, slug):
 
 
 def blog(request):
-    return render(request, "blog/blog.html")
+    post = Post.objects.all()
+    paginator = Paginator(post,2)
+
+    page_number = request.GET.get("page")
+    post_obj = paginator.get_page(page_number)
+
+    
+    return render(request, "blog/blog.html",{"post": post_obj})
+
 
 def about(request):
     return render(request, "blog/about.html")
+
 # def blog(request):
 #     return render(request, "blog/blog.html")
 
