@@ -9,6 +9,8 @@ urlpatterns = [
     path('signup/', views.signupPage, name='signup'),
     path('login/', views.loginPage, name='login'),
     path('logout/', views.logoutUser, name='logout'),
-
-
+       
+    #comment session
+    path('<slug:slug>/', views.details, name='post_details'),
+    
 ]
