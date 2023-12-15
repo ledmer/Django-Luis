@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Inexpensive IAP Reduction System</title>
     <link href="https://fonts.geogleapis.com/family=Lora|Ubuntu:300,400,700&displayswap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.4/css/bulma.min.css" />
     <meta name="author" content="Spencer Cooper">
     <link rel="stylesheet" href="{% static 'asset/css/style.css' %}" >
 </head>
@@ -24,8 +25,7 @@
                     
                     {% if user.is_authenticated %}
                         <li class="nav-list-item"><span> Welcome, {{request.user}} </span></li>
-                        <li class="nav-list-item"><a href="{% url 'logout' %}?next={{ request.path }}">Logout</a>
-                        </span>
+                        <li class="nav-list-item"><a href="{% url 'logout' %}">Logout</a></span>
                     {% else %}
                         <li class="nav-list-item"><a href="{% url 'signup' %}" class="navbar-line">SignUp</a><span> | <a href="{% url 'login' %}?next={{request.path}}" class="navbar-line">Login</a></span></li> 
                     {% endif %}

@@ -1,56 +1,77 @@
-from django.shortcuts import render, redirect
-from .models import Post
+from django.shortcuts import get_object_or_404, render, redirect
+from .models import Post, Comment
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm
+from .forms import CreateUserForm, CommentForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.core.paginator import Paginator
 # Create your views here.
 
 def index(request):
-    posts = Post.objects.all()
-    return render(request, "blog/index.html",{"posts":posts})
+    post = Post.objects.all()
+    paginator = Paginator(post,1)
+
+    page_number = request.GET.get("page")
+    post_obj = paginator.get_page(page_number)
+
+    
+    return render(request, "blog/index.html",{"post": post_obj})
+
+#Comments
+def details(request, slug):
+    post = get_object_or_404(Post, slug=slug)
+
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.save()
+            return redirect('post_details', slug=slug)
+
+    else:
+        form = CommentForm()
+    return render(request, 'blog/details.html',{"posts":post, "form":form})
+#Comments end here
 
 
 def blog(request):
-    return render(request, "blog/blog.html")
+    post = Post.objects.all()
+    paginator = Paginator(post,2)
+
+    page_number = request.GET.get("page")
+    post_obj = paginator.get_page(page_number)
+
+    
+    return render(request, "blog/blog.html",{"post": post_obj})
+
 
 def about(request):
     return render(request, "blog/about.html")
+
 # def blog(request):
 #     return render(request, "blog/blog.html")
 
+
 #Accounts
-
-
 def loginPage(request):  
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
-
         if user is not None:
             login(request, user)
-            next_url = request.POST.get('next', None)
-            if next_url:
-                return redirect(next_url)
-            else:
-            # If 'next' is not present, use the stored URL or a default URL
-                return redirect(request.session.get('last_page_visited', '/'))
+            return redirect('next')
         else:
             messages.info(request, 'Username OR Password is incorrect')
-    else:
-        request.session['last_page_visited'] = request.META.get('HTTP_REFERER', '/')
- 
     context = {}
     return render(request, "accounts/login.html", context)
 
 def logoutUser(request):
-    request.session['last_page_visited'] = request.META.get('HTTP_REFERER', '/')
-    next_url = request.GET.get('next', None)
-
     logout(request)
-    return redirect(next_url or request.session.get('last_page_visited', '/'))
+    return redirect('/')
 def signupPage(request):
 
     form = CreateUserForm()
@@ -60,7 +81,7 @@ def signupPage(request):
             form.save()
             user = form.cleaned_data.get("username")
             messages.success(request,'Account was created for ' + user)
-            return redirect('/')
+            return redirect('login')
             
     context = {'form':form}
     return render(request, "accounts/signup.html",context)

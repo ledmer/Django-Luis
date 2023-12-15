@@ -1,0 +1,56 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+
+{% block content_area %}
+    <div class="container">
+        <div class="">
+            <div class="banner-section">
+                <p class="banner-heading"><span>Blog </span><br>{{posts.title}}</p> 
+            </div>
+            <br>
+            <p class="article-info"><strong>{{posts.current_time|timesince}} ago</strong></p>
+            <p class="article-body">{{posts.body}}</a></p>
+         
+            <hr>
+            <h2 class="comment">Comment</h2>
+            <form method="POST" class="">
+                {%csrf_token %}
+    
+                {{form.as_p}}
+                <div class="fields">
+                    <div class="control">
+                    <button class="button is-success">Comments</button>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+    
+            </form>
+         
+        </div>
+        
+    </div>
+
+  
+  
+       
+        {% for Comment in post.comments.all %}
+    
+            <article class="container container-main">
+                <div class="comment-section">
+                    <strong><p>{{Comment.name }}</p></strong><small>{{ Comment.current_time |timesince }} ago</small><br>
+                    <p>{{Comment.body}}</p>
+                </div>
+            
+            <br>
+            <br>
+            </article>
+
+            <br>
+            <br> 
+    
+        {% endfor %}
+
+
+{%endblock%}

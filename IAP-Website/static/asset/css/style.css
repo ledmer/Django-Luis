@@ -1,23 +1,36 @@
-/* *{
+*{
     margin : 0;
     padding : 0;
 
-}  */
+} 
 /* Using compound selector on navbar */
-cent{
-    text-align : center;
-}
+
 body{
     margin : 0;
     font-family : 'Ubuntu', sans-serif;
-    font-size: 1.25rem;
+    /* font-size: 1.95rem; */
     font-weight: 300;
+    /* padding : 2.3rem; */
+
 }
 
 img {
     max-width : 100%;
+    width : 100%;
+    margin :0;
+    padding :0;
     display : block;
+   
 }
+
+.media{
+    width : 30%;
+    background-color :#f8f8f8;
+    color : black;
+}
+
+
+
 
 /* ==========
  Page Layout
@@ -35,10 +48,12 @@ img {
 }
 
 header{
-    padding : 1em 0;
-    background: #efefef;
+    padding : 0 1em;
+    /* background : yellow; */
+    background: #f8f8f8f8;
     text-align: left;
     margin-bottom : 2em;
+    /* margin : 0 2em; */
 }
 
 /* Nav bar section */
@@ -48,7 +63,19 @@ nav{
     display : flex;
     justify-content: space-between;
     align-items: right;
-    padding : 0 14px;
+    /* padding : 0 14px; */
+    margin : 0;
+}
+
+.banner-heading{
+    text-align: center;
+    font-size : 3rem;
+    text-shadow: 0 1px 1px;
+    color : black;
+    /* color :	#FFFFFF; */
+    margin-bottom : .9em;
+    letter-spacing: .2em;
+    font-weight: 600;
 }
 
 nav ul{
@@ -86,6 +113,16 @@ nav span{
    
 }
 
+.bar{
+    display : block;
+    width : 25px;
+    height : 3px;
+    margin : 5px auto;
+    -webkit-transition : all 0.3s ease-in-out;
+    transition : all 0.3s ease-in-out;
+    background-color: black;
+  
+}
 nav a:hover,
 nav a:focus{
     color : #1792d2;
@@ -125,29 +162,87 @@ a:focus{
 }
 
 .banner-section{
-    border: 15px solid #efefef;
-    margin-top : -20px;
-    width : 80vw;
-    height : 70vh;
-    margin : 0 auto;
+    /* margin-top : -20px; */
+    width : 90vw;
+    height : 55vh;
+    margin : 0;
     justify-content: space-between;
     background-color : #efefef;
+    padding : 0;
+}
+.banner-heading{
+    font-size : 3rem;
+    color : #fff;
 }
 
+
+.banner-section{
+    align-items: center;
+        width : 100%;
+        min-height : 70vh;
+        background-image: linear-gradient(rgba(0,8,51,0.9),rgba(0,8,51,0.9));
+        background-position : center;
+        background-size : cover;
+        /* padding : 5%; */
+        align-items: center;
+        justify-content: center; 
+}
 .banner-section img{
     max-width: 100%;
     width : 100%;
-    margin-bottom : -15rem;
+    /* object-position : top left; */
+    margin-bottom : -10em;
     object-fit:cover;
-    height : 70vh;
+    height : 65vh;
 }
-h1.banner-heading {
+
+.pagination-list{
+    min-height : 30px;
+    margin : 0;
+    padding : 0 14px; 
+
+}
+.nav-list-item{
+    font-size : 1.5rem;
+    display: flex;
+    margin : 0;
+    padding : .9, .9em;
+
+}
+.pagination-line{
+    display: inline;
+    padding : .3rem;
+    /* margin : 0 auto; */
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.pagination-item{
     text-align: left;
-    margin-top : 0px;
-    margin-bottom : 10px;
-    font-size: 2rem;
-    font-weight: 700;
+   
 }
+.page-link{
+    font-size : 1.5rem;
+    margin : .5 .5em;
+    color : #1792d2;
+}
+
+.page-link:hover{
+    background-color : #1792d2;
+    color : #f8f8f8;
+    padding : .3em;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    border-radius: .3em;
+}
+.article-title, .article-info, .article-body, .comment{
+    font-size : 1.5rem;
+    margin : 0;
+    padding : .3em 0;
+
+}
+
 
 
 
@@ -156,58 +251,98 @@ h1.banner-heading {
 Navbar mobile media query ======= */
 @media screen and (max-width: 668px){
 
-    .hamburger {
-        display: inline-block;
-        cursor: pointer;
+    .hamburger{
+        display : block;
     }
-  
-    .bar {
-        display: block;
-        width: 30px;
-        height: 0px;
-        background-color: #3A3B3C;
-        margin: 6px 0;
-        transition: 0.4s;
+    .nav-list{
+        flex-direction: column;
+        margin-right : 0 auto;
     }
 
+    .nav-line{
+        margin-right : 3em;
+    }
+    
+    .nav-list{
+        margin : 0 14px;
+        padding : .5em;
+        
+    }
+    .nav-list-item{
+        padding : .3em;
+    }
+
+
     .hamburger.active .bar:nth-child(2){
-        opacity: 0;
+        opacity : 0;
     }
 
     .hamburger.active .bar:nth-child(1){
-        transform: translateY(16px) rotate(-50deg);
+        transform : translateY(8px) rotate(45deg);
     }
 
+
     .hamburger.active .bar:nth-child(3){
-        transform: translateY(-16px) rotate(50deg);
+        transform : translateY(-8px) rotate(-45deg);
     }
+
+    /* start of editing */
+
+    /* Place here */
     .nav-list{
-        display: none;
-    }
-    .nav-list.active{
-        list-style: none;
-        display:list-item;
-        position : absolute;
-        right: 10%;
+        position : fixed;
+        left : -100%;
         top : 70px;
-        gap : 3px;
-        flex-direction : column;
-        background-color : #262626;
-        width : 30%;
+        gap : 0;
+        flex-direction: column;
+        background-color : #f8f8f8;
+        width : 100%;
+        text-align: left;
         transition : 0.3s;
+
+    }
+
+    .nav-list.active{
+        left : 0;
     }
 
     .nav-list-item{
-        margin : 16px 0;
+        /* margin : 16px 0; */
+        margin-right : 3em;
     }
 
     .nav-list-item.active{
         text-align: left;
     }
+
+    .banner-section{
+        /* margin-top : rem; */
+        align-items: center;
+        width : 100%;
+        min-height : 40vh; 
+    }
+    .banner-section img{
+        max-width: 100%;
+        width : 100%;
+        height : 65vh;
+    }
+    .banner-heading{
+        font-size : 1.5rem;
+        color : #fff;
+        padding : .9em;
+    }
+
+    img {
+        width : 50%;
+        margin :0;
+        padding :0;
+        display : block;
+       
+    }
 }
 /* end of Nav media query section */
 
-/* The rural cooking site tile */
+/* The rural cooking site title */
 .site-title{
     font-weight : 700;
     font-size : .75rem;
@@ -236,6 +371,7 @@ footer{
     color : #fff;
     text-align : center;
     padding : 1em;
+    margin : 0;
 }
 @media (min-width: 668px){
     .container-main{
@@ -252,8 +388,6 @@ footer{
     }
 }
 
-
-.article-read-more,
 .article-read-more{
     font-size: 0.875rem;
 }
@@ -270,9 +404,10 @@ footer{
 
 .article-info{
     line-height: 0;
+    
 }
 
-.article-title{
+.article-title, .article-read-more{
     font-size: 1.5rem;
 }
 .widget-title,
@@ -336,8 +471,10 @@ footer{
         flex-direction : row;
         justify-content: space-between;
     }
+    
     .article-recent-main{
         width : 68%;
+        padding : 3rem;
     }
 
     .article-rent-secondary{
