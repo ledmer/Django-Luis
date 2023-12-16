@@ -242,6 +242,16 @@ a:focus{
     padding : .3em 0;
 
 }
+.comment-section{
+    width : 40%;
+    color : black;
+    font-size : 1.5rem;
+    background-color : rgba(255,255,255,.3);
+    padding : 20px;
+    box-shadow: 0 6px 10px rgba(0,0,0, .3);
+    border-radius : 15px;
+    color : darkgreen;
+}
 
 
 
