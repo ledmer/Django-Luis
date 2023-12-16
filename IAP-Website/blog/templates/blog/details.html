@@ -27,6 +27,15 @@
                 </div>
     
             </form>
+
+            {% for Comment in posts.comments.all %}
+                <div class="comment-section">
+                    <strong><p>{{ Comment.name }}</p></strong><small>{{ Comment.current_time |timesince }} ago</small><br>
+                    <p>{{ Comment.body }}</p>
+                </div>
+            {% endfor %}
+            <br>
+      
          
         </div>
         
@@ -35,22 +44,7 @@
   
   
        
-        {% for Comment in post.comments.all %}
-    
-            <article class="container container-main">
-                <div class="comment-section">
-                    <strong><p>{{Comment.name }}</p></strong><small>{{ Comment.current_time |timesince }} ago</small><br>
-                    <p>{{Comment.body}}</p>
-                </div>
-            
-            <br>
-            <br>
-            </article>
 
-            <br>
-            <br> 
-    
-        {% endfor %}
 
 
 {%endblock%}
