@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render, redirect
 from .models import Post, Comment
-from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
 from .forms import CreateUserForm, CommentForm
 from django.contrib import messages
@@ -62,13 +62,13 @@ def loginPage(request):
         password = request.POST.get('password')
         user = authenticate(request, username=username, password=password)
         if user is not None:
+            next = request.POST.get('next', '/')
             login(request, user)
-            return redirect('next')
+            return HttpResponseRedirect(next)
         else:
             messages.info(request, 'Username OR Password is incorrect')
     context = {}
     return render(request, "accounts/login.html", context)
-
 def logoutUser(request):
     logout(request)
     return redirect('/')

@@ -105,8 +105,10 @@
 						</div>
 
 							<div class="d-flex justify-content-center mt-3 login_container">
+                                <input type="hidden" name="next" value="{{ request.GET.next }}">
 				 				<input class="btn login_btn" type="submit" value="Login">
 				   			</div>
+
 					</form>
 				</div>
                 {% for message in messages %}

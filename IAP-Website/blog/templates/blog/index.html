@@ -5,8 +5,10 @@
 {%block content_area %}
     <div class="container">
         <div class="banner-section">
-            <img src="{% static 'asset/images/test1.jpg' %}">
-                <h1 class="banner-heading">The Rural Cooking Blog</h1> 
+            <img src="/static/asset/images/test1.jpg">
+            <div class="text-banner rounded">
+                <h2 class="banner-heading">The Rural Cooking Blog</h1>
+            </div>
         </div>
         <div class="block_article">
             {% for post in post %}
@@ -36,20 +38,13 @@
                     <li class="pagination-line">
                         <a class="page-link" href="#">page {{post.number}} of {{post.paginator.num_pages}}</a>
                     </li>
-
-                   
-
                     {% if post.has_next %}
-                    <span>
                     <li class="pagination-line">
                         <a class="page-link" href="?page={{post.next_page_number }}"> Next</a>
                     </li>
-
                     <li class="pagination-line">
                         <a class="page-link" href="?page={{post.paginator.num_pages }}">Last &raquo; </a>
                     </li>
-              
-
                     {%endif%}
             
             </ul>
@@ -63,6 +58,7 @@
         </div>
         
     </div>
+</div>
 
     <br>
     <br>
